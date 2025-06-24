@@ -42,12 +42,14 @@ Benchmarks deep learning models:
 
 ## 🗂️ Wi-PER81 Dataset Structure
 
-The ready-to-use Wi-PER81 dataset—comprising CSI measurements, raw and sanitized amplitude values, and corresponding signal magnitude heatmaps—is available on Figshare: https://doi.org/10.6084/m9.figshare.26984497.
+The ready-to-use Wi-PER81 dataset—comprising CSI measurements, raw and sanitized amplitude values, and corresponding signal magnitude heatmaps—is available in the output folder of this `repository` or on Figshare: https://doi.org/10.6084/m9.figshare.26984497.
 
 ### CSV Folders:
 - `CSV/csi_matrices/`: Raw CSI values
 - `CSV/raw_amplitudes/`: Extracted raw amplitudes
-- `CSV/IQR_amplitudes/`: IQR-filtered amplitudes
+- `CSV/sanitized_amplitudes/IQR_amplitudes/`: Amplitudes filtered using the IQR method
+- `CSV/sanitized_amplitudes/HF_amplitudes/`: Amplitudes filtered using the Hampel Filter
+- `CSV/sanitized_amplitudes/zscore_amplitudes/`: Amplitudes filtered using the Z-score method
 
 ### Image Folders:
 - `ImageData/D1/`: Training set (session A)
@@ -73,7 +75,7 @@ Each identity has 10 signal magnitude heatmaps per session, generated from group
 
 DenseNet121 achieved the best accuracy. The dropout-enhanced baseline provided a strong speed-accuracy tradeoff.
 
-> 🧪 To reproduce these results, use the **final code snippet in `WiPER-Benchmarking.ipynb`** that loads pre-trained weights and evaluates the models directly on the provided test set (`D2t`).
+> 🧪 To reproduce these results, use the **final code snippet in `WiPER-Benchmarking.ipynb`**, skipping the training and performance evaluation cells. This snippet loads the pre-trained weights and evaluates the models directly on the provided test set `D2t` (adjust the path if necessary).
 
 ---
 
