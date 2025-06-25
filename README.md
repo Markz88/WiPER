@@ -16,6 +16,25 @@ Wi-Fi sensing enables privacy-preserving alternatives to camera-based Re-ID by e
 
 ---
 
+## 📦 Installation
+
+To run this project, you need to install the required dependencies.
+
+### Clone the Repository
+```bash
+git clone https://github.com/Markz88/WiPER.git
+cd WiPER
+```
+
+### Install Dependencies
+Create a virtual environment using **Python 3.13.3** (optional, but recommended), and install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
 ## 📁 Repository Structure
 
 This repo contains three core Jupyter notebooks:
@@ -35,26 +54,27 @@ Generates image-based datasets:
 ### 3. `WiPER-Benchmarking.ipynb`
 Benchmarks deep learning models:
 - Implements a **Siamese-like neural architecture** for person Re-ID.
-- Tests multiple CNN backbones described in the WiPER81 paper.
+- Trains and tests multiple CNN backbones described in the WiPER81 paper.
 - Computes standard Re-ID metrics (e.g., Rank-1, Rank-5, Rank-10, mAP).
+- Contains the snippet code to reproduce the paper’s results using the provided pre-trained models.
 
 ---
 
 ## 🗂️ Wi-PER81 Dataset Structure
 
-The ready-to-use Wi-PER81 dataset—comprising CSI measurements, raw and sanitized amplitude values, and corresponding signal magnitude heatmaps—is available in the output folder of this `repository` or on Figshare: https://doi.org/10.6084/m9.figshare.26984497.
+The ready-to-use Wi-PER81 dataset—comprising CSI measurements, raw and sanitized amplitude values, and corresponding signal magnitude heatmaps—is available in the `output` folder of this repository or on Figshare: https://doi.org/10.6084/m9.figshare.26984497.
 
 ### CSV Folders:
-- `CSV/csi_matrices/`: Raw CSI values
-- `CSV/raw_amplitudes/`: Extracted raw amplitudes
-- `CSV/sanitized_amplitudes/IQR_amplitudes/`: Amplitudes filtered using the IQR method
-- `CSV/sanitized_amplitudes/HF_amplitudes/`: Amplitudes filtered using the Hampel Filter
-- `CSV/sanitized_amplitudes/zscore_amplitudes/`: Amplitudes filtered using the Z-score method
+- `output/CSV/csi_matrices/`: Raw CSI values
+- `output/CSV/raw_amplitudes/`: Extracted raw amplitudes
+- `output/CSV/sanitized_amplitudes/IQR_amplitudes/`: Amplitudes filtered using the IQR method
+- `output/CSV/sanitized_amplitudes/HF_amplitudes/`: Amplitudes filtered using the Hampel Filter
+- `output/CSV/sanitized_amplitudes/zscore_amplitudes/`: Amplitudes filtered using the Z-score method
 
 ### Image Folders:
-- `ImageData/D1/`: Training set (session A)
-- `ImageData/D2v/`: Validation set (session B)
-- `ImageData/D2t/`: Test set (session B)
+- `output/ImageData/D1/`: Training set (session A)
+- `output/ImageData/D2v/`: Validation set (session B)
+- `output/ImageData/D2t/`: Test set (session B)
 
 Each identity has 10 signal magnitude heatmaps per session, generated from groups of 100 packets.
 
@@ -75,17 +95,7 @@ Each identity has 10 signal magnitude heatmaps per session, generated from group
 
 DenseNet121 achieved the best accuracy. The dropout-enhanced baseline provided a strong speed-accuracy tradeoff.
 
-> 🧪 To reproduce these results, use the **final code snippet in `WiPER-Benchmarking.ipynb`**, skipping the training and performance evaluation cells. This snippet loads the pre-trained weights and evaluates the models directly on the provided test set `D2t` (adjust the path if necessary).
-
----
-
-## 📦 Installation
-
-Install dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
+> 🧪 To reproduce these results, use the **final code snippet in `WiPER-Benchmarking.ipynb`**, skipping the training and performance evaluation cells. This snippet loads the pre-trained weights from the `pre-trained` folder and evaluates the models directly on the provided test set located at `output/ImageData/D2t/` (modify the path if needed).
 
 ---
 
