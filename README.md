@@ -26,6 +26,18 @@ git clone https://github.com/Markz88/WiPER.git
 cd WiPER
 ```
 
+### Download Pre-Trained Models
+Make sure Git LFS is installed
+```bash
+git lfs install
+```
+If you don’t have Git LFS installed, you can download it from https://git-lfs.github.com/ or install it via your package manager.
+
+Pull large files (i.e., pre-trained models)
+```bash
+git lfs pull
+```
+
 ### Install Dependencies
 Create a virtual environment using **Python 3.13.3** (optional, but recommended), and install the dependencies:
 
