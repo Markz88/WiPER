@@ -1,12 +1,13 @@
-# Wi-PER81: A Benchmark Dataset for Wi-Fi Signal Image-based Person Re-Identification
+# A Benchmark Dataset for Wi-Fi Signal Image-based Person Re-Identification
 
 This repository accompanies the paper:
 
 > **A Benchmark Dataset for Radio Signal Image-based Person Re-Identification**  
 > Marco Cascio, Luigi Cinque, Damiano Distante, Gian Luca Foresti, Alessio Fagioli  
-> [DOI and publication details to be inserted here]
+> Scientific Data 12, 1522 (2025)
+> DOI: [10.1038/s41597-025-05804-0](https://doi.org/10.1038/s41597-025-05804-0)
 
-Wi-PER81 is a pioneering dataset and benchmark for Wi-Fi-based person re-identification (Re-ID). It provides a complete pipeline from raw Channel State Information (CSI) signal processing to deep learning benchmarking using image-based radio signatures.
+Wi-PER81 is a pioneering dataset and benchmark for Wi-Fi-based person re-identification (Re-ID). It provides a complete pipeline from Channel State Information (CSI) signal processing to deep learning benchmarking using image-based radio signatures.
 
 ---
 
@@ -116,15 +117,19 @@ DenseNet121 achieved the best accuracy. The dropout-enhanced baseline provided a
 Please cite the following paper if you use this code or dataset:
 
 ```bibtex
-@article{cascio2025wiper81,
-  title={A Benchmark Dataset for Radio Signal Image-based Person Re-Identification},
-  author={Cascio, Marco and others},
-  journal={Scientific Data},
-  year={2025}
+@article{cascio2025,
+  author    = {Marco Cascio and Luigi Cinque and Damiano Distante and Gian Luca Foresti and Alessio Fagioli},
+  title     = {A Benchmark Dataset for Radio Signal Image-based Person Re-Identification},
+  journal   = {Scientific Data},
+  volume    = {12},
+  number    = {1},
+  pages     = {1522},
+  year      = {2025},
+  doi       = {10.1038/s41597-025-05804-0}
 }
 ```
 
 ---
 
 ## 📎 License
-Released under the MIT License. See LICENSE for details.
+Released under the MIT License.
